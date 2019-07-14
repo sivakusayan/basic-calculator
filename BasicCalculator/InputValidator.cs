@@ -25,14 +25,15 @@ namespace BasicCalculator
         /**
          * Reads a binary math operator from user input.
          **/ 
-        public string ReadMathOperator()
+        public string ReadBinaryMathOperator()
         {
-            int input;
-            bool isNumeric = int.TryParse(Console.ReadLine(), out input);
+            string input = Console.ReadLine();
+            if (input.Equals("+") || input.ToLower().Equals("add")) return "+";
+            if (input.Equals("-") || input.ToLower().Equals("minus")) return "-";
+            if (input.Equals("*") || input.ToLower().Equals("*")) return "*";
+            if (input.Equals("/") || input.ToLower().Equals("/")) return "/";
 
-            if (!isNumeric) throw new System.Data.ConstraintException();
-
-            return input;
+            throw new System.Data.ConstraintException();
         }
     }
 }

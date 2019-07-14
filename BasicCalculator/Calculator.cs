@@ -39,7 +39,21 @@ namespace BasicCalculator
 
         static void getMathOperator()
         {
+            try
+            {
+                Console.WriteLine("Please a math operator.");
+                mathOperator = reader.ReadBinaryMathOperator();
+            }
+            catch
+            {
+                showErrorMessage();
+                exit();
+            }
+        }
 
+        static void calculate()
+        {
+            
         }
 
         static void exit()
@@ -57,6 +71,9 @@ namespace BasicCalculator
         static void Main(string[] args)
         {
             getNumberInputs();
+            Console.WriteLine();
+            getMathOperator();
+            Console.WriteLine();
         }
     }
 }

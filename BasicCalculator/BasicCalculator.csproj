@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums.cs" />
     <Compile Include="InputValidator.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
