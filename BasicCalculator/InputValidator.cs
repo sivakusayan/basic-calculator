@@ -21,5 +21,18 @@ namespace BasicCalculator
 
             return input;
         }
+
+        /**
+         * Reads a binary math operator from user input.
+         **/ 
+        public string ReadMathOperator()
+        {
+            int input;
+            bool isNumeric = int.TryParse(Console.ReadLine(), out input);
+
+            if (!isNumeric) throw new System.Data.ConstraintException();
+
+            return input;
+        }
     }
 }

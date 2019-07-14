@@ -37,9 +37,14 @@ namespace BasicCalculator
             }
         }
 
+        static void getMathOperator()
+        {
+
+        }
+
         static void exit()
         {
-            Console.Write("Shutting down application.");
+            Console.Write("\nShutting down application.");
             for (int i = 0; i < 2; i++)
             {
                 Thread.Sleep(500);
