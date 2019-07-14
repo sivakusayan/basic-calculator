@@ -9,31 +9,45 @@ namespace BasicCalculator
 
     class Calculator
     {
+        static InputValidator reader = new InputValidator();
+
+        static int a; // First input
+        static int b; // Second input
+        static string mathOperator;
+
         static void showErrorMessage()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Invalid Input. Shutting down application.");
+            Console.WriteLine("Invalid Input.");
             Console.ResetColor();
 
             Console.ReadLine();
         }
 
-        static void Main(string[] args)
+        static void getNumberInputs()
         {
-            InputValidator reader = new InputValidator();
-            int a;
-            int b;
-
             try
             {
                 Console.WriteLine("Please enter two integers.");
                 a = reader.ReadInt();
                 b = reader.ReadInt();
-            } catch
+            }
+            catch
             {
                 showErrorMessage();
-                System.Environment.Exit(1);
+                exit();
             }
+        }
+
+        static void exit()
+        {
+            Console.WriteLine("Shutting down application.");
+            System.Environment.Exit(1);
+        }
+
+        static void Main(string[] args)
+        {
+            getNumberInputs();
         }
     }
 }
