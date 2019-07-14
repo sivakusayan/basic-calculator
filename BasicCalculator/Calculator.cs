@@ -32,6 +32,7 @@ namespace BasicCalculator
             }
             catch
             {
+                Console.WriteLine();
                 showErrorMessage();
                 exit();
             }
@@ -46,6 +47,7 @@ namespace BasicCalculator
             }
             catch
             {
+                Console.WriteLine();
                 showErrorMessage();
                 exit();
             }
@@ -53,12 +55,30 @@ namespace BasicCalculator
 
         static void calculate()
         {
-            
+            switch(mathOperator)
+            {
+                case "+":
+                    Console.WriteLine($"{a} + {b} = {a + b}");
+                    break;
+                case "*":
+                    Console.WriteLine($"{a} * {b} = {a * b}");
+                    break;
+                case "-":
+                    Console.WriteLine($"{a} - {b} = {a - b}");
+                    break;
+                case "/":
+                    int res = a + b;
+                    Console.WriteLine($"{a} / {b} = {a / b}");
+                    break;
+                default:
+                    break;
+            }
+            Console.ReadLine();
         }
 
         static void exit()
         {
-            Console.Write("\nShutting down application.");
+            Console.Write("Shutting down application.");
             for (int i = 0; i < 2; i++)
             {
                 Thread.Sleep(500);
@@ -74,6 +94,9 @@ namespace BasicCalculator
             Console.WriteLine();
             getMathOperator();
             Console.WriteLine();
+            calculate();
+            Console.WriteLine();
+            exit();
         }
     }
 }

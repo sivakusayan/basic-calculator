@@ -30,8 +30,8 @@ namespace BasicCalculator
             string input = Console.ReadLine();
             if (input.Equals("+") || input.ToLower().Equals("add")) return "+";
             if (input.Equals("-") || input.ToLower().Equals("minus")) return "-";
-            if (input.Equals("*") || input.ToLower().Equals("*")) return "*";
-            if (input.Equals("/") || input.ToLower().Equals("/")) return "/";
+            if (input.Equals("*") || input.ToLower().Equals("multiply")) return "*";
+            if (input.Equals("/") || input.ToLower().Equals("divide")) return "/";
 
             throw new System.Data.ConstraintException();
         }
