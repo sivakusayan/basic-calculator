@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace BasicCalculator
 {
@@ -20,8 +20,6 @@ namespace BasicCalculator
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Invalid Input.");
             Console.ResetColor();
-
-            Console.ReadLine();
         }
 
         static void getNumberInputs()
@@ -41,7 +39,13 @@ namespace BasicCalculator
 
         static void exit()
         {
-            Console.WriteLine("Shutting down application.");
+            Console.Write("Shutting down application.");
+            for (int i = 0; i < 2; i++)
+            {
+                Thread.Sleep(500);
+                Console.Write(".");
+            }
+            Thread.Sleep(500);
             System.Environment.Exit(1);
         }
 
